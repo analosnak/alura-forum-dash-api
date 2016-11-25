@@ -1,14 +1,12 @@
-package br.com.alura.forumdash.controller;
+package br.com.alura.forumdash.model;
 
 import java.util.List;
+
+import br.com.alura.forumdash.controller.TopicVisualization;
 
 public class TopicList {
 	
 	private List<TopicVisualization> list;
-
-	public TopicList() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public List<TopicVisualization> getList() {
 		return list;

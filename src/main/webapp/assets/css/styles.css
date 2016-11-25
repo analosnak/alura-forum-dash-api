@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+html, body, section {
+	font-family: sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+ul.categorias li {
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 5px 10px;
+	text-transform: uppercase;
+}
+
+#business {
+	background-color: #0079ac;
+}
+
+#designUx {
+	background-color: #9d60b8;
+}
+
+#frontEnd {
+	background-color: #009bdd;
+}
+
+#infraestrutura {
+	background-color: #f1634b;
+}
+
+#mobile {
+	background-color: #fdc14a;
+}
+
+#programacao {
+	background-color: #00c86f;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+svg {
+	display: block;
+	margin: auto;
+}

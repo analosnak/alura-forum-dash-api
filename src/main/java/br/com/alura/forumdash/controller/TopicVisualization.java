@@ -6,6 +6,8 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import br.com.alura.forumdash.helper.HintHelper;
+
 public class TopicVisualization {
 
 	private LocalDateTime creationDate;
@@ -21,10 +23,6 @@ public class TopicVisualization {
 	private String title;
 
 	private String link;
-
-	public TopicVisualization() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public void setCreationDate(String creationDate) {
 		this.creationDate = LocalDateTime.parse(creationDate, ofPattern("dd/MM/yyyy kk:mm"));
@@ -53,13 +51,17 @@ public class TopicVisualization {
 	public void setLink(String link) {
 		this.link = link;
 	}
-
+	
 	public long getSize() {
 		return Duration.between(creationDate, LocalDateTime.now()).get(ChronoUnit.SECONDS);
 	}
 
 	public String getColor() {
-		return "#ffffff";
+		return "#faa";
+	}
+
+	public String getHint() {
+		return HintHelper.getHint(this.category);		
 	}
 
 	public String getCategory() {

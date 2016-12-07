@@ -13,18 +13,24 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class ForumController {
 
-	@GetMapping(value="/openTopics", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/openTopics", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public TopicList openTopics(){
-		
+	public TopicList openTopics() {
+
+		RestTemplate restTemplate = new RestTemplate();
+
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("user-agent", "alura-dash");
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
 
-		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<TopicList> topicList = restTemplate.exchange("https://cursos.alura.com.br/d23hd728h7h8f70fh0f0837fh74387fh3478/forum/sem-respostas", HttpMethod.GET, entity, TopicList.class);
-	
-		return topicList.getBody();
-	}
+		restTemplate.getForObject(
+				"https://cursos.alura.com.br/d23hd728h7h8f70fh0f0837fh74387fh3478/forum/clean-cache",
+				String.class);
 
+		ResponseEntity<TopicList> topicListResponse = restTemplate.exchange(
+				"https://cursos.alura.com.br/d23hd728h7h8f70fh0f0837fh74387fh3478/forum/sem-respostas",
+				HttpMethod.GET, entity, TopicList.class);
+
+		return topicListResponse.getBody();
+	}
 }

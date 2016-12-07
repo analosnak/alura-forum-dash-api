@@ -63,6 +63,6 @@ function render(data) {
 			.text(d => valueOfTooltip(d));
 }
 
-fetch('/openTopics', {method: 'get'} )
+fetch('/openTopics')
 	.then(response => response.json())
 	.then(json => render(json));

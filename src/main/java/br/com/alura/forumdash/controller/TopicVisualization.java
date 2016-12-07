@@ -1,12 +1,11 @@
 package br.com.alura.forumdash.controller;
 
-import static java.time.format.DateTimeFormatter.ofPattern;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import br.com.alura.forumdash.helper.HintHelper;
+import br.com.alura.forumdash.helper.LocalDateHelper;
 
 public class TopicVisualization {
 
@@ -24,8 +23,10 @@ public class TopicVisualization {
 
 	private String link;
 
+	private String color;
+
 	public void setCreationDate(String creationDate) {
-		this.creationDate = LocalDateTime.parse(creationDate, ofPattern("dd/MM/yyyy kk:mm"));
+		this.creationDate = LocalDateHelper.getLocalCreationDate(creationDate);
 	}
 
 	public void setDays(Integer days) {
@@ -57,7 +58,7 @@ public class TopicVisualization {
 	}
 
 	public String getColor() {
-		return "#faa";
+		return this.color;
 	}
 
 	public String getHint() {

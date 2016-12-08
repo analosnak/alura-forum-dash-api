@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -jar target/forumdash-1.0.0-SNAPSHOT.jar --port $PORT

@@ -1,4 +1,4 @@
-package br.com.alura.forumdash.controller;
+package br.com.alura.forumdash.model;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -82,7 +82,7 @@ public class TopicVisualization {
 	}
 
 	public String getLink() {
-		return link;
+		return "https://cursos.alura.com.br" + link;
 	}
 
 	public Integer getDays() {

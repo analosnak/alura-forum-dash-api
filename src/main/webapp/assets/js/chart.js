@@ -65,4 +65,8 @@ function render(data) {
 
 fetch('/openTopics')
 	.then(response => response.json())
-	.then(json => render(json));
+	.then(json => {
+		console.log(json);
+		render(json);
+	});
+	

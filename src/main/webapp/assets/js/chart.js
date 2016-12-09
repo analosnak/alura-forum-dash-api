@@ -49,7 +49,7 @@ function render(data) {
 			.attr("id", d => d.link)
 			.attr("r", d => d.r )
 			.attr("class", "bolha")
-			.attr("fill", d => d.color);
+			.attr("fill", d => d.color === '' ? '#9eb3c1' : d.color);
 	
 	node.append("text")
 			.attr("font-size", "15")
@@ -65,8 +65,5 @@ function render(data) {
 
 fetch('/openTopics')
 	.then(response => response.json())
-	.then(json => {
-		console.log(json);
-		render(json);
-	});
+	.then(json => render(json));
 	
